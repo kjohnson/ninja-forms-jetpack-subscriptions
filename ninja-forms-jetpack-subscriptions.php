@@ -12,11 +12,6 @@ Author URI: http://kylebjohnson.me
 Copyright 2015 Kyle B. Johnson.
 */
 
-if( ! class_exists( 'NF_Base_Menu' ) ) {
-    require_once 'classes/menu.class.php';
-}
-require_once 'includes/admin/menu.php';
-
 /**
  * Class NF_JetpackSubscriptions
  */
