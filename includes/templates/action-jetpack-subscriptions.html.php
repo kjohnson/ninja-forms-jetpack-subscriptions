@@ -1,8 +1,18 @@
+<!-- SETTING: EMAIL FIELD -->
 <tr>
     <th scope="row">
-        <label for="settings[example]"><?php _e( 'Example Setting', NF_JetpackSubscriptions::TEXTDOMAIN ); ?></label>
+        <label for="settings[nf-jps-email-field]"><?php _e( 'Email Field', 'ninja-forms-jetpack-subscriptions' ); ?></label>
     </th>
     <td>
-        <input type="text" name="settings[example]" id="settings-example" value="<?php echo $settings['example']; ?>" />
+        <select name="settings[nf-jps-email-field]" id="settings-nf-jps-email-field">
+            <option></option>
+            <?php foreach( $form->fields as $field ): ?>
+                <?php if( '_text' == $field['type'] ): ?>
+                    <option value="<?php echo $field['id']; ?>"<?php if( $field['id'] == $settings['nf-jps-email-field'] ) echo " selected"; ?>>
+                        <?php echo $field['data']['label']; ?> (ID: <?php echo $field['id']; ?>)
+                    </option>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </select>
     </td>
 </tr>
